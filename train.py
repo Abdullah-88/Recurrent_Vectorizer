@@ -5,7 +5,7 @@ from torch import nn
 from torch.utils.data import DataLoader 
 from torchvision import datasets 
 from torchvision.transforms import ToTensor, Normalize, RandomCrop, RandomHorizontalFlip, Compose 
-from vectorizer import Vectorizer
+from vectorizer_gru import Vectorizer
 
 
 
@@ -160,7 +160,7 @@ def test(dataloader, model, loss_fn):
 
 
 
-logname = "/home/abdullah/Desktop/Recurrent_Vectorizer/Experiments_cifar10/logs_vectorizer/logs_cifar10.csv"
+logname = "/PATH/Recurrent_Vectorizer_GRU/Experiments_cifar10/logs_vectorizer/logs_cifar10.csv"
 if not os.path.exists(logname):
   with open(logname, 'w') as logfile:
     logwriter = csv.writer(logfile, delimiter=',')
@@ -181,7 +181,7 @@ print("Done!")
 
 
 
-path = "/home/abdullah/Desktop/Recurrent_Vectorizer/Experiments_cifar10/weights_vectorizer"
+path = "/PATH/Recurrent_Vectorizer_GRU/Experiments_cifar10/weights_vectorizer"
 model_name = "VectorizerImageClassification_cifar10"
 torch.save(model.state_dict(), f"{path}/{model_name}.pth")
 print(f"Saved Model State to {path}/{model_name}.pth ")
